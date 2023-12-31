@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css" class="css">
+</head>
+<body>
+    <main>
+        <form method="post", action="/login">
+            <h1>Login Here</h1>
+            <input name="email", placeholder="email:@gmail.com" value="<%=locals.email%>"></input>
+            <input type="password", name="password", placeholder="xyz"></input>
+            <button type="submit">Log In</button>
+            <h2> <%= locals.message %> </h2>
+        </form>
+    </main>
+    
+    
+</body>
+</html>

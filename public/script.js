@@ -1,0 +1,1 @@
+console.log("hello here we have successfully trsted the static files working without giving absolute path")
