@@ -33,7 +33,7 @@ import cookieParser from "cookie-parser";
 import jwt from "jsonwebtoken"
 import bcrypt from "bcrypt"
 
-const Port=4000;
+
 const app=express()
 
 const userSchema=new mongoose.Schema({
@@ -47,7 +47,7 @@ const userSchema=new mongoose.Schema({
   
   const User=mongoose.model("User", userSchema);
 
-const Instance=mongoose.connect(`mongodb://localhost:27017/`, {
+const Instance=mongoose.connect(process.env.MONGO_DB_URI, {
     dbName:"backend"
 })
 .then(()=>{
@@ -172,6 +172,6 @@ app.post("/login", async (req, res)=>{
 //         users
 //     })
 // })
-app.listen(Port, ()=>{
-    console.log(`listening on the Port Number: ${Port}`)
+app.listen(process.env.PORT, ()=>{
+    console.log(`listening on the PORT Number: ${process.env.PORT}`)
 })
